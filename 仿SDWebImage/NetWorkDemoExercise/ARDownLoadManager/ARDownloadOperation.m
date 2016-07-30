@@ -7,6 +7,7 @@
 //
 
 #import "ARDownloadOperation.h"
+#import "NSString+path.h"
 
 @interface ARDownloadOperation ()
 @property (nonatomic, copy) NSString *urlString;
@@ -27,6 +28,18 @@
 }
 - (void)main{
     //系统会自动执行操作的main   操作代码写在main里面
+    //获得图片的url
+    NSURL *imageURL = [NSURL URLWithString:self.urlString];
+    //转换成2进制数据
+    NSData *data = [NSData dataWithContentsOfURL:imageURL];
+    //2进制数据转化为图片
+    UIImage *image = [UIImage imageWithData:data];
+    //数据存入沙盒一份
+    [data writeToFile:[_urlString appendCachePath] atomically:true];
+    
+    self.image = image;
+    
+    
 }
 
 @end

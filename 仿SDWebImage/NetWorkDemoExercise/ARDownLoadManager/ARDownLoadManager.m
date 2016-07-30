@@ -8,6 +8,7 @@
 
 #import "ARDownLoadManager.h"
 #import "NSString+path.h"
+#import "ARDownloadOperation.h"
 
 @interface ARDownLoadManager ()
 /**
@@ -22,6 +23,7 @@
  *  操作缓存
  */
 @property (nonatomic,strong) NSMutableDictionary *operationCache;
+@property (nonatomic,strong) NSOperationQueue *queue;
 @end
 @implementation ARDownLoadManager
 + (instancetype)sharedManager{
@@ -40,10 +42,11 @@
         /**
          *  @author Ari
          *
-         *  初始化两个缓存
+         *  初始化3个缓存
          */
         self.imageCache = [NSMutableDictionary dictionary];
         self.operationCache =[NSMutableDictionary dictionary];
+        self.queue = [[NSOperationQueue alloc] init];
         
     }
     return self;
@@ -80,7 +83,26 @@
     }
     //4.创建操作下载图片
     NSLog(@"创建操作 下载图片");
-    
+    ARDownloadOperation *op = [ARDownloadOperation operationWithUrlString:urlString];
+    __weak typeof(ARDownloadOperation *) weekOP = op;
+    //监听操作的完成  操作完成后   image属性就有值了
+    [op setCompletionBlock:^{
+        //取出image  通过主线程 回调回去
+        UIImage * image = weekOP.image;
+        
+        
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            //图片存入缓存
+            [self.imageCache setObject:image forKey:urlString];
+            //操作完成  从操作缓存中移除
+            [self.operationCache removeObjectForKey:urlString];
+            compeletion(image);
+        }];
+    }];
+    //将操作添加到操作缓存中
+    [self.operationCache setObject:op forKey:urlString];
+    //操作添加到队列中
+    [self.queue addOperation:op];
     
     
 }

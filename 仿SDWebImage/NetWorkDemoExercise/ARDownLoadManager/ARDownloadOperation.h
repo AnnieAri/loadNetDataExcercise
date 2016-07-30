@@ -6,9 +6,10 @@
 //  Copyright © 2016年 com.Ari. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface ARDownloadOperation : NSOperation
+@property (nonatomic,strong) UIImage *image;
 /**
  *  @author Ari
  *

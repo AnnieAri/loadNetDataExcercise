@@ -15,6 +15,7 @@
 		C827E77D1D4CD3D700E19ACC /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C827E7771D4CD3D700E19ACC /* AFURLSessionManager.m */; };
 		C827E7811D4CD88D00E19ACC /* ARDownLoadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C827E7801D4CD88D00E19ACC /* ARDownLoadManager.m */; };
 		C827E7851D4CDAAD00E19ACC /* NSString+path.m in Sources */ = {isa = PBXBuildFile; fileRef = C827E7841D4CDAAD00E19ACC /* NSString+path.m */; };
+		C827E7881D4CE0BE00E19ACC /* ARDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C827E7871D4CE0BE00E19ACC /* ARDownloadOperation.m */; };
 		C8D4693C1D4CB9D4000EB9CC /* AppCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D4693B1D4CB9D4000EB9CC /* AppCell.m */; };
 		C8F9D3D61D4B7BE2004B0B1F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8F9D3D51D4B7BE2004B0B1F /* main.m */; };
 		C8F9D3D91D4B7BE2004B0B1F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C8F9D3D81D4B7BE2004B0B1F /* AppDelegate.m */; };
@@ -63,6 +64,8 @@
 		C827E7801D4CD88D00E19ACC /* ARDownLoadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARDownLoadManager.m; sourceTree = "<group>"; };
 		C827E7831D4CDAAD00E19ACC /* NSString+path.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+path.h"; sourceTree = "<group>"; };
 		C827E7841D4CDAAD00E19ACC /* NSString+path.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+path.m"; sourceTree = "<group>"; };
+		C827E7861D4CE0BE00E19ACC /* ARDownloadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARDownloadOperation.h; sourceTree = "<group>"; };
+		C827E7871D4CE0BE00E19ACC /* ARDownloadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARDownloadOperation.m; sourceTree = "<group>"; };
 		C8D4693A1D4CB9D4000EB9CC /* AppCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppCell.h; sourceTree = "<group>"; };
 		C8D4693B1D4CB9D4000EB9CC /* AppCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppCell.m; sourceTree = "<group>"; };
 		C8F9D3D11D4B7BE2004B0B1F /* NetWorkDemoExercise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetWorkDemoExercise.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +139,8 @@
 			children = (
 				C827E77F1D4CD88D00E19ACC /* ARDownLoadManager.h */,
 				C827E7801D4CD88D00E19ACC /* ARDownLoadManager.m */,
+				C827E7861D4CE0BE00E19ACC /* ARDownloadOperation.h */,
+				C827E7871D4CE0BE00E19ACC /* ARDownloadOperation.m */,
 			);
 			path = ARDownLoadManager;
 			sourceTree = "<group>";
@@ -356,6 +361,7 @@
 				C8F9D3DC1D4B7BE2004B0B1F /* ViewController.m in Sources */,
 				C827E77A1D4CD3D700E19ACC /* AFSecurityPolicy.m in Sources */,
 				C8F9D3D91D4B7BE2004B0B1F /* AppDelegate.m in Sources */,
+				C827E7881D4CE0BE00E19ACC /* ARDownloadOperation.m in Sources */,
 				C8D4693C1D4CB9D4000EB9CC /* AppCell.m in Sources */,
 				C827E77C1D4CD3D700E19ACC /* AFURLResponseSerialization.m in Sources */,
 				C8F9D4531D4B7EDE004B0B1F /* AppInfo.m in Sources */,

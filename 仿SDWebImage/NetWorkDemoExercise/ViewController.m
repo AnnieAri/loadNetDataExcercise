@@ -20,24 +20,24 @@
  *  数据模型
  */
 @property (nonatomic,strong) NSMutableArray<AppInfo *> *appInfos;
-/**
- *  @author Ari
- *
- *  操作队列   因为cell的复用机制  避免多次创建队列  故使用全局变量
- */
-@property (nonatomic,strong) NSOperationQueue *queue;
-/**
- *  @author Ari
- *
- *  图片缓存
- */
-@property (nonatomic,strong) NSMutableDictionary *imageCache;
-/**
- *  @author Ari
- *
- *  操作缓存
- */
-@property (nonatomic,strong) NSMutableDictionary *operationCache;
+///**
+// *  @author Ari
+// *
+// *  操作队列   因为cell的复用机制  避免多次创建队列  故使用全局变量
+// */
+//@property (nonatomic,strong) NSOperationQueue *queue;
+///**
+// *  @author Ari
+// *
+// *  图片缓存
+// */
+//@property (nonatomic,strong) NSMutableDictionary *imageCache;
+///**
+// *  @author Ari
+// *
+// *  操作缓存
+// */
+//@property (nonatomic,strong) NSMutableDictionary *operationCache;
 @end
 
 @implementation ViewController
@@ -136,7 +136,7 @@
 - (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
     
-    [self.imageCache removeAllObjects];
+//    [self.imageCache removeAllObjects];
 }
 
 
@@ -165,23 +165,23 @@
     
 }
 
-- (NSMutableDictionary *)operationCache{
-    if (!_operationCache) {
-        _operationCache =[NSMutableDictionary dictionary];
-    }
-    return _operationCache;
-}
-/**
- *  @author Ari
- *
- *  懒加载 创建图片缓存字典
- */
-- (NSMutableDictionary *)imageCache{
-    if (!_imageCache) {
-        _imageCache = [NSMutableDictionary dictionary];
-    }
-    return _imageCache;
-}
+//- (NSMutableDictionary *)operationCache{
+//    if (!_operationCache) {
+//        _operationCache =[NSMutableDictionary dictionary];
+//    }
+//    return _operationCache;
+//}
+///**
+// *  @author Ari
+// *
+// *  懒加载 创建图片缓存字典
+// */
+//- (NSMutableDictionary *)imageCache{
+//    if (!_imageCache) {
+//        _imageCache = [NSMutableDictionary dictionary];
+//    }
+//    return _imageCache;
+//}
 /**
  *  @author Ari
  *
@@ -194,16 +194,16 @@
     }
     return _appInfos;
 }
-/**
- *  @author Ari
- *
- *  懒加载创建一个队列
- *
- */
-- (NSOperationQueue *)queue{
-    if (!_queue) {
-        _queue = [[NSOperationQueue alloc] init];
-    }
-    return _queue;
-}
+///**
+// *  @author Ari
+// *
+// *  懒加载创建一个队列
+// *
+// */
+//- (NSOperationQueue *)queue{
+//    if (!_queue) {
+//        _queue = [[NSOperationQueue alloc] init];
+//    }
+//    return _queue;
+//}
 @end

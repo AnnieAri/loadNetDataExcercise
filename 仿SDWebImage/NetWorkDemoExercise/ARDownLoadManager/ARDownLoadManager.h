@@ -19,6 +19,6 @@
 + (instancetype)sharedManager;
 
 
-- (void)downloadImageWithUrlString:(NSString *)urlString compeletion:(void(^)(UIImage *))compeletion;
+- (void)downloadImageWithUrlString:(NSString *)urlString compeletion:(void(^)(UIImage *image))compeletion;
 
 @end
